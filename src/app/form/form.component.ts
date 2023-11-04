@@ -53,7 +53,7 @@ export class FormComponent implements OnInit {
 
       console.log(requestBody);
       // Send the POST request
-      this.http.post('https://167.99.38.252:5000/predict', requestBody).subscribe(
+      this.http.post('http://167.99.38.252:5000/predict', requestBody).subscribe(
         (response: any) => {
           console.log('POST request successful:', response);
           this.submitted = true;
