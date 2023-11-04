@@ -1,0 +1,58 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a modern font family */
+  body {
+    font-family: 'Roboto', sans-serif; /* You can replace 'Roboto' with any other modern font */
+  }
+  
+  /* Add some spacing and line height for readability */
+  body {
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    
+  }
+  
+
+  /* Style links */
+  a {
+    color: #007BFF; /* Link color */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add some basic styles for buttons */
+
+  
+  /* Add a subtle box shadow to elements */
+  .box-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 600px) {
+    /* Add styles for small screens */
+  }
+  
+  .line {
+    height: 1px;
+    background-color: gray;
+    width: 100%; /* Span the entire width of the parent container */
+    margin-top: 5px; /* Adjust as needed for spacing */
+    margin-bottom: 10px; /* Adjust as needed for spacing */
+  }
+
+
+  body {
+    background-image: url('/assets/bgimage.png');
+    background-size: cover; /* Adjust this to fit your design */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  

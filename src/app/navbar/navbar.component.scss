@@ -1,0 +1,39 @@
+nav {
+  background-color: #1E4380; /* Background color */
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+.nav1 {
+  display: block;
+  color: white; /* Text color */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+li a:hover {
+  background-color: #555;
+}
+
+/* Optional: Add a smooth transition effect */
+li a {
+  transition: background-color 0.3s;
+}
+
+.logo {
+  border-radius: 20%; /* This value makes it round (50% of the width/height) */
+  width: 50px; /* Adjust the width to your desired size */
+  height: 50px; /* Adjust the height to your desired size */
+}
