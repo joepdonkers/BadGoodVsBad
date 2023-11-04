@@ -5,14 +5,14 @@
 
   <div class="row mt-3" *ngIf="jsonData.predicted_class === 1; else noClass">
     <div>
-      <h5>You have diabetes!</h5>
+      <h5>{{text}} <p class="inline-p" *ngIf="jsonData.certainty >= 0.6">you have diabetes!</p></h5>
     </div>
   </div>
 
   <ng-template #noClass>
     <div class="row mt-3">
       <div>
-        <h5>you don't have diabetes</h5>
+        <h5>{{text}} <p class="inline-p" *ngIf="jsonData.certainty >= 0.6">you don't have diabetes!</p></h5>
       </div>
     </div>
   </ng-template>
