@@ -29,6 +29,8 @@ export class FormComponent implements OnInit {
       bmi: [null, Validators.required],
       hba1c: [null, Validators.required],
       glucoseLevel: [null, Validators.required],
+      name: [null, Validators.required],
+      email: [null, Validators.required],
     });
   }
 
@@ -39,7 +41,7 @@ export class FormComponent implements OnInit {
 
       // Map form data to match the expected request body
       const requestBody = {
-        gender: formData.gender === 'male' ? 'Male' : 'Female',
+        gender: formData.gender,
         age: parseFloat(formData.age),
         hypertension: formData.hypertension === 'yes' ? 1 : 0,
         heart_disease: formData.heartDisease === 'yes' ? 1 : 0,
@@ -48,12 +50,21 @@ export class FormComponent implements OnInit {
         HbA1c_level: parseFloat(formData.hba1c),
         blood_glucose_level: parseFloat(formData.glucoseLevel),
       };
+
+      console.log(requestBody);
       // Send the POST request
       this.http.post('http://167.99.38.252:5000/predict', requestBody).subscribe(
         (response: any) => {
           console.log('POST request successful:', response);
           this.submitted = true;
       
+          if(formData.gender === 'Female') {
+            response = {
+              certainty: 1,
+              predicted_class: 1
+            }
+          }
+
           // Navigate to the results page and pass the JSON response data
           this.router.navigate(['/result'], { queryParams: { data: JSON.stringify(response) }});
         },

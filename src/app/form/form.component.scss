@@ -201,6 +201,11 @@ select option {
   float: left;
   width: 50%;
 }
+.col-full {
+  padding-right: 10px;
+  float: left;
+  width: 100%;
+}
 .col-half:last-of-type {
   padding-right: 0;
 }
