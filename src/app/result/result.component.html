@@ -3,21 +3,20 @@
     <h1>Results</h1>
   </div>
 
-  <div class="row mt-3" *ngIf="jsonData.predicted_class === 1; else noClass">
+  <div class="row">
     <div>
-      <h5>{{text}} <p class="inline-p" *ngIf="jsonData.certainty >= 0.6">you have diabetes!</p></h5>
+      <h5>
+        <span>
+          there is a {{text}}% chance that
+          <span>
+            {{ jsonData.predicted_class === 1 ? 'you have diabetes' : 'you don\'t have diabetes' }}
+          </span>
+        </span>
+      </h5>
     </div>
   </div>
 
-  <ng-template #noClass>
-    <div class="row mt-3">
-      <div>
-        <h5>{{text}} <p class="inline-p" *ngIf="jsonData.certainty >= 0.6">you don't have diabetes!</p></h5>
-      </div>
-    </div>
-  </ng-template>
-
-  <div *ngIf="jsonData.predicted_class === 1" class="row mt-3">
+  <div class="row mt-3">
     <div>
       <!-- Display "buy our product" information for patients with diabetes here -->
       <h3 class="subheader">Consider our product for better health:</h3>
@@ -26,7 +25,7 @@
         <li>Learn more about our product benefits.</li>
         <li>Contact us for information and pricing.</li>
         <li>Consult with our experts for personalized advice.</li>
-        <li class="custom-email">diabetesriskchecker@gmail.com</li>
+        <li>we will be contacting you with <p class="inline-p custom-email">diabetesriskchecker@gmail.com</p></li>
       </ul>
     </div>
   </div>
