@@ -26,11 +26,32 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col-half">
-        <h4>What is your </h4>
+        <h4>Your phone number</h4>
         <div class="input-group input-group-icon">
           <div class="col-full">
-            <input type="text" formControlName="email" placeholder="Email" />
+            <input
+              type="text"
+              formControlName="phonenr"
+              placeholder="PhoneNumber"
+            />
+            <div class="input-icon">
+              <i class="fa fa-credit-card"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-half">
+        <h4>The country you live in</h4>
+        <div class="input-group input-group-icon">
+          <div class="col-full">
+            <input
+              type="text"
+              formControlName="country"
+              placeholder="Country"
+            />
             <div class="input-icon">
               <i class="fa fa-credit-card"></i>
             </div>
@@ -226,6 +247,43 @@
         >
       </div>
     </div>
+
+    <div
+      *ngIf="
+        healthForm?.get('name')?.touched &&
+        healthForm.get('name')?.hasError('required')
+      "
+    >
+      <h5 class="text-danger">! Name is required</h5>
+    </div>
+
+    <div
+      *ngIf="
+        healthForm?.get('email')?.touched &&
+        healthForm.get('email')?.hasError('required')
+      "
+    >
+      <h5 class="text-danger">! Email is required</h5>
+    </div>
+
+    <div
+      *ngIf="
+        healthForm?.get('phonenr')?.touched &&
+        healthForm.get('phonenr')?.hasError('required')
+      "
+    >
+      <h5 class="text-danger">! PhoneNumber is required</h5>
+    </div>
+
+    <div
+      *ngIf="
+        healthForm?.get('country')?.touched &&
+        healthForm.get('country')?.hasError('required')
+      "
+    >
+      <h5 class="text-danger">! Country number is required</h5>
+    </div>
+
     <!-- Age -->
     <div
       *ngIf="
@@ -306,26 +364,15 @@
       <h5 class="text-danger">! Blood Glucose Level is required</h5>
     </div>
 
-    <div
-      *ngIf="
-        healthForm?.get('name')?.touched &&
-        healthForm.get('name')?.hasError('required')
-      "
-    >
-      <h5 class="text-danger">! Name is required</h5>
-    </div>
-
-    <div
-      *ngIf="
-        healthForm?.get('email')?.touched &&
-        healthForm.get('email')?.hasError('required')
-      "
-    >
-      <h5 class="text-danger">! Email is required</h5>
-    </div>
-
     <div class="row">
-    <button type="submit" class="btn submitbutton mt-4" [class]="buttonClass" id="submitButton">Submit</button>
+      <button
+        type="submit"
+        class="btn submitbutton mt-4"
+        [class]="buttonClass"
+        id="submitButton"
+      >
+        Submit
+      </button>
     </div>
   </form>
 
